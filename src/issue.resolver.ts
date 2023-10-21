@@ -1,6 +1,7 @@
 import {
   Args,
-  Field, Int,
+  Field,
+  Int,
   Mutation,
   ObjectType,
   Query,
@@ -21,7 +22,12 @@ export class Vote {
 
 @Resolver(() => String)
 export class IssueResolver {
-  private votes: Map<string, number> = new Map();
+  private votes: Map<string, number>;
+
+  constructor() {
+    this.votes = new Map();
+    this.votes.set('default', 0);
+  }
 
   @Query(() => Vote, { nullable: true })
   async getVotes(@Args('id') id: string): Promise<Vote | null> {

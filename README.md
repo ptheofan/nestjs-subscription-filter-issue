@@ -1,5 +1,5 @@
-Code First Subscriptions
-========================
+Code First Subscriptions in nestjs
+==================================
 
 1. In the resolver function add the `@Subscription` decorator
 ```ts

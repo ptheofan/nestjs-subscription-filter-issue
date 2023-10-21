@@ -80,7 +80,8 @@ export class VotesResolver {
       return payload.voteUpdate.id === variables.id;
     },
   })
-  voteUpdate(): AsyncIterator<Vote> {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  voteUpdate(@Args('id') id: string): AsyncIterator<Vote> {
     return pubSub.asyncIterator('voteUpdate');
   }
 }

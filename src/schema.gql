@@ -17,5 +17,5 @@ type Mutation {
 }
 
 type Subscription {
-  voteUpdate: Vote
+  voteUpdate(id: String!): Vote
 }

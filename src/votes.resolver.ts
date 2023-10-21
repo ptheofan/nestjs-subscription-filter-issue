@@ -20,8 +20,8 @@ export class Vote {
   value: number;
 }
 
-@Resolver(() => String)
-export class IssueResolver {
+@Resolver(() => Vote)
+export class VotesResolver {
   private votes: Map<string, number>;
 
   constructor() {

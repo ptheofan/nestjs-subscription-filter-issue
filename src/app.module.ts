@@ -5,7 +5,7 @@ import { join } from 'path';
 import { GraphQLModule } from '@nestjs/graphql';
 import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
 import { ApolloServerPluginLandingPageLocalDefault } from '@apollo/server/plugin/landingPage/default';
-import { IssueResolver } from './issue.resolver';
+import { VotesResolver } from './votes.resolver';
 
 @Module({
   imports: [
@@ -22,6 +22,6 @@ import { IssueResolver } from './issue.resolver';
     }),
   ],
   controllers: [AppController],
-  providers: [AppService, IssueResolver],
+  providers: [AppService, VotesResolver],
 })
 export class AppModule {}
